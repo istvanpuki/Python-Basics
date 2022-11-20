@@ -19,7 +19,7 @@
 szam_a = 10 #number int
 szam_b = 8.24 #number float
 szam_c = 32.3e19 #number tudomanyos
-szam_d = .825j #number
+szam_d = .825j #number komplex
 
 favourite_number = 99 # Ez Javaban úgy nézne ki, hogy    int favourite_number = 99;
 # Láthatod, hogy Pythonban nem kell megadni a változó típusát, mert arra az interpreter magától következtet az értékből.
