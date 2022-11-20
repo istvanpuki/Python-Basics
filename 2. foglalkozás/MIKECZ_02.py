@@ -43,6 +43,10 @@ igaz = True
 hamis = False
 print(type(igaz))
 
+age = 5
+print(f"John is {age} years old")
+# Ezzel a módszerrel átláthatóbb a változók kiiratása egy sztringen belül.
+
 # A programozás világában a változóknak angol neveket szoktunk adni. Figyeljünk arra, hogy a változó neve utaljon a tartalomra.
 # A kezdetekben még magyar neveket fogunk adni a változóknak, hogy könnyebb legyen értelmezni a feladatokat.
 # Oldjuk meg a következő feladatokat a gyakorlatban.
