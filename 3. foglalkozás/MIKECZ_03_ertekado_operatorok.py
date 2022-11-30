@@ -3,7 +3,8 @@
 
 szam = 30
 print(szam)
-szam += 1 #szam = szam + 1        ez ugyanaz
+#szam += 1
+szam = szam + 1        #ez ugyanaz
 print(szam)
 
 szam -= 5
