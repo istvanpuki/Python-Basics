@@ -21,6 +21,7 @@ print(numbers[2] [1]) #a 2-es indexből ad vissza az első index számú elemet.
 szamlista = range(100)
 print(szamlista)
 print(list(szamlista)) #Lista típussá kényszerítünk
+print(f"A listában 0-99-ig 100 elem van, amit a len függvénnyel be is bizonyítok. len.() metódussal kiiratott érték:", len(szamlista)) #length kifejezésre utal.
 
 
 # A W3school feladataival lehet gyakorolni az Operators és a List témakörben egyaránt! :)
