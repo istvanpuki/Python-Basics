@@ -4,12 +4,21 @@ szam1 = 10
 szam2 = 20
 szam3 = 2
 szam4 = 5
+szam5 = 2.51
 
 print(szam1+szam2)
 print(szam1-szam2)
 print(szam1*szam2)
 print(szam1/szam2)
 print(szam1//szam2) #egész számos osztás. az eredmény egész szám lesz
+
+# felfelé kerekítve
+print("Szám felfelé kerekítve")
+# print(kerekitve) Itt még nincs kerekítve
+# print(szam5)
+print(round(szam5))
+
+print("Többi példa")
 print(szam2//szam1)
 print(szam3**szam1) #hatványozás 2 a 10-en ebben a példában
 print(szam2%szam1) #maradek mennyi. 20-ban a 10 megvan 2-szer. Maradék 0. A maradékot írja csak ki.
