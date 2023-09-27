@@ -14,8 +14,10 @@ for i in range(10):
     print("üdvözöllek")
 
 fruits = ["Apple", "Pear", "Banana", "Orange", "Plum"]
-for i in fruits:
-    print(i)
+for fruit in fruits:
+#for index, fruit in enumerate(fruits):
+    #print(index)
+    print(fruit)
 
 for i in range(1,6):
    print(i)
