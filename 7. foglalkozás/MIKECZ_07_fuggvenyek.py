@@ -1,5 +1,9 @@
 #Függvények
 
+#Példa Globális változóra
+
+globalis_pelda = "Hello. Én egy globális változó vagyok, aminek String a típusa."
+
 def összead_függvény(a,b):
    return a + b
 
@@ -26,4 +30,11 @@ def sum():
 correct_result = sum()
 print(correct_result)
 
+def global_vs_local():
+    lokalis_pelda = "Hello. Én egy lokalis változó vagyok."
+    return globalis_pelda, lokalis_pelda
+
+glob_valt = print(global_vs_local())
+
+# print(lokalis_pelda)
 #Globális és lokális változók közötti különbség
