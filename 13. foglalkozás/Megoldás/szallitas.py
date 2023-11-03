@@ -26,6 +26,6 @@ for item in itemsWeights:
 boxes.append(count)
 
 print("3. feladat")
-print(f"A dobozok tartalmának tömege (kg): {boxes}")
+print("A dobozok tartalmának tömege (kg): ", *boxes) #Csillag operátor használata a kiíratás miatt
 print(f"A szükséges dobozok száma: {len(boxes)}")
   
