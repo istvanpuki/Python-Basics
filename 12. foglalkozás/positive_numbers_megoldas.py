@@ -1,6 +1,6 @@
 '''
 Feladat:
-Írj egy logikai értékkel visszatérő Python függvényt, amely paraméterként kap három számot és
+Írj egy logikai értékkel visszatérő Python függvényt, amely paraméterként kap három egész típusú számot és
 eldönti, hogy az összes paramétere pozitív-e! A programodban hívd is meg ezt az alprogramot!
 
 '''
