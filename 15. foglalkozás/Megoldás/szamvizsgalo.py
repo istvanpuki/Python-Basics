@@ -45,5 +45,5 @@ else:
 print('\n6. feladat')
 for index, szamjegy in enumerate(szam_vissza, start=1):
     print('x', end='')
-    if (len(szam_vissza) - index+1) % 3 == 0 and len(szam_vissza) != index:
+    if (len(szam_vissza) - index) % 3 == 0 and len(szam_vissza) != index:
         print('.', end='')  
