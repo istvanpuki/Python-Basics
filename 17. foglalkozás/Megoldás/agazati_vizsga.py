@@ -81,7 +81,73 @@ def exercise_three_without_class():
             olasz = True
     if olasz == True:
         print("3.5. feladat: Van olasz épület az adatok között!")
-        
-#exercise_one()
-#exercise_two()
-exercise_three_without_class()
+    else:
+        print('3.5 feladat: Nincs olasz épület az adatok között!')    
+
+#Exercise three class and constructor
+class Building:
+    name = ""
+    city = ""
+    country = ""
+    height = 0.0
+    floor = 0
+    madeYear = 0
+
+    '''
+    class Building:
+        def __str__(self):
+            return f"{self.name} ({self.city}, {self.country}) - Magasság: {self.height} m, Emeletek: {self.floor}, Építés éve: {self.madeYear}"
+    '''
+
+    def __init__(self, row): #The row parameter is from the varosok.txt file, and the row is include the building attributes.
+        rowData = row.strip().split(";")
+
+        self.name = rowData[0]
+        self.city = rowData[1]
+        self.country = rowData[2]
+        self.height = float( rowData[3].replace(',', '.') )
+        self.floor = int( rowData[4] )
+        self.madeYear = int( rowData[5] )
+
+
+def exercise_three():
+    buildings = [] 
+
+    with open("varosok.txt", "r", encoding='UTF-8') as file:
+        file.readline()
+        for r in file:
+            row = Building(r)
+            buildings.append(row)
+    #print(buildings) Itt wil show <__main_: object at memory address>
+
+    print(f"3.2 feladat: Épületek száma: {len(buildings)} db")
+
+    floors = 0
+    for b in buildings:
+        floors += b.floor
+    print(f"3.3. feladat: Emeletek összege {floors}")
+
+    tallest = buildings[0]
+    for b in buildings:
+        if b.height > tallest.height:
+            tallest = b
+    print('3.4 feladat: A legmagasabb épület adatai')
+    print(f"\t Név: {tallest.name}")
+    print(f"\t Város: {tallest.city}")
+    print(f"\t Ország: {tallest.country}")
+    print(f"\t Magasság: {tallest.height} m")
+    print(f"\t Emeletek száma: {tallest.floor}")
+    print(f"\t Építés éve: {tallest.madeYear}")
+
+    italian = False
+    for b in buildings:
+        if b.country == "Olaszország":
+            italian = True
+    if italian == True:
+        print("3.5. feladat: Van olasz épület az adatok között!")
+    else:
+        print('3.5 feladat: Nincs olasz épület az adatok között!')  
+exercise_one()
+exercise_two()
+#exercise_three_without_class()
+exercise_three()

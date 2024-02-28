@@ -13,7 +13,6 @@ with open('rendel.txt', 'r', encoding='utf-8') as file:
         }
         
         orders.append(order)
-
 #print(orders)
 
 # 2. Exercise
@@ -52,34 +51,89 @@ print(f"{nocommercialcity} nap nem volt a reklámban nem érintett városból re
 
 #5. Exercise nincs kész
 def maxPiece():
-    searchMax = []
     biggestPiece = 0
-    orderDay = []
-    correctDay = 0
+    orderDay = {}
     for order in orders:
-        searchMax.append(order['orderPiece'])
-    biggestPiece = max(searchMax)
-
-    for order in orders:
-        if order['orderPiece'] == 9:
-            orderDay.append(order['orderDay'])
-    correctDay = orderDay[0]        
-    return f"A legnagyobb darabszám: {biggestPiece}, a rendelés napja: {correctDay}" 
+        if order['orderPiece'] > biggestPiece:
+            biggestPiece = order['orderPiece']
+            orderDay = order
+    return f"A legnagyobb darabszám: {biggestPiece}, a rendelés napja: {orderDay['orderDay']} "
 
 print("5. feladat: ")
 maxpiece = maxPiece()
 print(f"{maxpiece}")
 
-# Exercise 6. nincs kész
+# Exercise 6. 
 
-def osszes(orderDay, orderCity):
-    day = orderDay
-    cityName = orderCity
+def osszes(cityName, day):
     counter = 0
     for order in orders:
-        if day == order['orderDay'] and cityName == order['orderCity']:
-            counter = counter + order['orderPiece']
+        if order['orderCity'] == cityName and order['orderDay'] == day:
+           counter += order['orderPiece']
     return counter
 
 osszes = osszes( str( input("OrderCity: ") ), int( input("OrderDay: ") ) )
 print(osszes)
+
+# Exercise 7.
+
+def exerciseSeven():
+    counterPL = 0
+    counterNR = 0
+    counterTV = 0
+    PL = "PL"
+    NR = "NR"
+    TV= "TV"
+
+    for order in orders:
+        if order['orderCity'] == PL and order['orderDay'] == 21:
+           counterPL += order['orderPiece']
+        if order['orderCity'] == NR and order['orderDay'] == 21:
+           counterNR += order['orderPiece']
+        if order['orderCity'] == TV and order['orderDay'] == 21:
+           counterTV += order['orderPiece']
+
+    return f"A rendelt termékek darabszáma a 21. napon: PL: {counterPL}, TV: {counterTV}, NR: {counterNR} "  
+
+exerciseSeven = exerciseSeven()
+print(exerciseSeven)
+
+def exerciseEight(): #Még nincs kész
+   counterPL = 0
+   counterNR = 0
+   counterTV = 0
+   counterPL2 = 0
+   counterNR2 = 0
+   counterTV2 = 0
+   counterPL3 = 0
+   counterNR3 = 0
+   counterTV3 = 0
+
+   for order in orders:
+       if order['orderDay'] < 11:
+           if order['orderCity'] == "PL":
+            counterPL += order['orderPiece']
+           if order['orderCity'] == "NR":
+            counterNR += order['orderPiece']
+           if order['orderCity'] == "TV":
+            counterTV += order['orderPiece']
+       elif 10 < order['orderDay'] < 21:
+            if order['orderCity'] == "PL":
+             counterPL2 += order['orderPiece']
+            if order['orderCity'] == "NR":
+             counterNR2 += order['orderPiece']
+            if order['orderCity'] == "TV":
+             counterTV2 += order['orderPiece']
+       elif 20 < order['orderDay'] < 31:
+            if order['orderCity'] == "PL":
+             counterPL3 += order['orderPiece']
+            if order['orderCity'] == "NR":
+             counterNR3 += order['orderPiece']
+            if order['orderCity'] == "TV":
+             counterTV3 += order['orderPiece']
+
+       #print(counterPL)
+           
+
+exerciseEight = exerciseEight()
+print(exerciseEight)
